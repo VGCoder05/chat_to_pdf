@@ -1,26 +1,40 @@
 {
   "manifest_version": 3,
   "name": "Chat Exporter",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Export chats as PDF with custom styling.",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
   },
-  "content_scripts": [
+  "web_accessible_resources": [
     {
+      "resources": [
+        "/style/style01.css",
+        "/style/style02.css",
+        "/style/style03.css",
+        "display.html"
+      ],
       "matches": [
         "<all_urls>"
-      ],
-      "js": [
-        "html2pdf.bundle.min.js"
       ]
     }
-  ]
+  ],
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  }
 }
