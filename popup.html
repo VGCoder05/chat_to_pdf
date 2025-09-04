@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Export Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background: #222;
+      color: #eee;
+    }
+
+    button {
+      padding: 8px 14px;
+      background: #4cafef;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #2196f3;
+    }
+
+    #loader {
+      display: none;
+      margin-top: 10px;
+      color: yellow;
+    }
+
+    select,
+    input {
+      margin-top: 8px;
+      padding: 4px;
+    }
+
+    @media print {
+
+      /* --- Core Styles for Dark Background --- */
+      * {
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        /* Chrome, Safari, Edge */
+        print-color-adjust: exact !important;
+        /* Firefox */
+      }
+
+      /* Apply dark background and light text to the entire page */
+      html {
+        position: relative;
+        height: 100%;
+        background-color: #1D1D20 !important;
+        color: #EAEAEA !important;
+      }
+
+      body {
+        position: absolute !important;
+        inset: 0 !important;
+      }
+
+
+      /* --- General Print Best Practices (Adjusted for Dark Mode) --- */
+
+      /* Hide elements that shouldn't be printed */
+      nav,
+      footer,
+      header,
+      aside,
+      form,
+      .no-print {
+        display: none !important;
+      }
+
+      /* Ensure the main content takes up the full width */
+      main,
+      article,
+      #content {
+        width: 100% !important;
+      }
+
+      /* Remove unnecessary shadows and decorations that look bad on paper */
+      * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+
+      /* Style links to be visible and useful on paper */
+      a,
+      a:visited {
+        color: #64b5f6 !important;
+        /* A lighter blue for better contrast on dark */
+        text-decoration: underline;
+      }
+
+      /* Optional: Show the full URL after each link */
+      a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-style: italic;
+        color: #ccc;
+        /* A slightly dimmer color for the URL */
+      }
+
+      /* Prevent images or other elements from breaking the page layout */
+      img,
+      svg {
+        max-width: 100% !important;
+      }
+
+      /* Reset font for better readability on paper (optional) */
+      body {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 12pt;
+        line-height: 1.4;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Export Chat as PDF</h3>
+  <label>Margin:
+    <select id="margin">
+      <option value="0.25">0.25 in</option>
+      <option value="0.5">0.5 in</option>
+      <option value="custom">Custom (mm)</option>
+    </select>
+  </label>
+  <input type="number" id="customMargin" style="display:none;" placeholder="Enter margin in mm">
+
+  <br><br>
+  <button id="exportBtn">Export Chat</button>
+  <div id="loader">📄 Exporting... please wait</div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
