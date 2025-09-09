@@ -61,6 +61,13 @@ function open_chat() {
       div[data-sentry-element="CodeBlockCode"] pre {
         padding: 0.5rem;
       }
+      
+ol > div:nth-child(even) {
+  flex: 1;              
+  border-radius: 1.5rem; 
+  padding: 0.5rem 0.75rem;
+}
+
 
       body[data-attribute="dark"] {
         --header-primary: 0 0% 100%;
