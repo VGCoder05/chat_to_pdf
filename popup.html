@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Export Chat</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 10px;
-        background: #222;
-        color: #eee;
-      }
 
-      button {
-        padding: 8px 14px;
-        background: #4cafef;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-      }
-      #openTabBtn {
-        background: #f3417f;
-      }
+<head>
+  <meta charset="utf-8" />
+  <title>Export Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background: #222;
+      color: #eee;
+    }
 
-      button:hover {
-        background: #2196f3;
-      }
+    button {
+      padding: 8px 14px;
+      background: #4cafef;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-      #openTabBtn:hover {
-        background: #f31663;
-      }
+    #openTabBtn {
+      background: #f3417f;
+    }
 
-      #loader {
-        display: none;
-        margin-top: 10px;
-        color: yellow;
-      }
+    button:hover {
+      background: #2196f3;
+    }
 
-      select,
-      input {
-        margin-top: 8px;
-        padding: 4px;
-      }
-    </style>
-  </head>
+    #openTabBtn:hover {
+      background: #f31663;
+    }
 
-  <body>
-    <h3>Export Chat as PDF</h3>
-    <label
-      >Margin:
-      <select id="margin">
-        <option value="0.25">0.25 in</option>
-        <option value="0.5">0.5 in</option>
-        <option value="custom">Custom (mm)</option>
-      </select>
-    </label>
-    <input
-      type="number"
-      id="customMargin"
-      style="display: none"
-      placeholder="Enter margin in mm"
-    />
+    #loader {
+      display: none;
+      margin-top: 10px;
+      color: yellow;
+    }
 
-    <br /><br />
-    <!-- <button id="exportBtn">Export Chat</button> -->
-    <button id="openTabBtn">Export Chat</button>
-    <div id="loader">📄 Exporting... please wait</div>
+    select,
+    input {
+      margin-top: 8px;
+      padding: 4px;
+    }
+  </style>
+</head>
 
-    <script src="popup.js"></script>
-  </body>
+<body>
+  <h3>Export Chat as PDF</h3>
+  <label>Margin:
+    <select id="margin">
+      <option value="0.25">0.25 in</option>
+      <option value="0.5">0.5 in</option>
+      <option value="custom">Custom (mm)</option>
+    </select>
+  </label>
+  <input type="number" id="customMargin" style="display: none" placeholder="Enter margin in mm" />
+
+  <br /><br />
+  <!-- <button id="exportBtn">Export Chat</button> -->
+  <button id="openTabBtn">Open Styled Tab</button>
+  <button id="downloadHtmlBtn">Download as HTML</button>
+  <div id="loader" style="display:none">📄 Exporting... please wait</div>
+
+  <script src="popup.js"></script>
+</body>
+
 </html>

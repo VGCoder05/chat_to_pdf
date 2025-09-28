@@ -6,7 +6,8 @@
   "permissions": [
     "activeTab",
     "scripting",
-    "storage"
+    "storage",
+    "downloads"
   ],
   "background": {
     "service_worker": "background.js"
@@ -24,8 +25,7 @@
       "resources": [
         "/style/style01.css",
         "/style/style02.css",
-        "/style/style03.css",
-        "display.html"
+        "/style/style03.css"
       ],
       "matches": [
         "<all_urls>"
